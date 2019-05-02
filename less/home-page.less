@@ -2,6 +2,9 @@
 display: flex;
 flex-direction: column;
 
+@media @mobile{
+  padding: 0 2rem;
+}
   .top-section{
     display: flex;
     flex-direction: column;
@@ -29,16 +32,30 @@ flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media @mobile{
+      flex-direction: column;
+      width:100%;
+  }
    
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile{
+        width:100%;
+        padding-right: 0;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile{
+        padding-left:0;
+        width:100%;
+      }
 
       img {
         border-radius: 10px;
@@ -47,6 +64,8 @@ flex-direction: column;
   }
 
   .inverse-content {
+    display: flex;
+    flex-direction: column;
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
@@ -59,6 +78,11 @@ flex-direction: column;
       padding-right: 1%;
       padding-left: 0;
     }
+
+    @media @mobile{
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   .content-destination {
@@ -66,7 +90,11 @@ flex-direction: column;
     margin: 0 auto 30px;
 
     img {
-      border-radius: 10px;
+      border-radius: 1rem;
+    }
+
+    @media @mobile{
+      width: 100%;
     }
   }
 
@@ -76,18 +104,45 @@ flex-direction: column;
     display: flex;
     justify-content: space-between;
 
+    @media @mobile{
+      flex-direction: column;
+    }
+
     .destination {
+      display:flex;
+      flex-direction: column;
       width: 30%;
       margin-bottom: 30px;
+      button{
+        .buttonmixin(@main-bg, @button-bg, @buttonradius, @button-bg, @buttonpadding, @buttonmargin);
+        width:85%;
+        @media @mobile{
+          width: 100%;
+        }
+      }
+
+      @media @mobile{
+        width:75%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+      }
     }
   }
 }
 
 .header{
-  .flexrow(space-around);
+  .flexrow(space-between);
+  max-width: 800px;
+  width: 100vw;
+  margin: 0 auto;
   align-items: center;
-  padding: 3rem;
+  padding: 3rem 0;
   border-bottom: @borderstyle;
+
+  @media @mobile{
+    flex-direction: column;
+    padding: 3rem 0 0 0;
+}
 }
 
 body{

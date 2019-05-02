@@ -4,3 +4,18 @@
     display:flex;
     justify-content: @justify;
 }
+
+.buttonmixin(@color, @bg-color, @border-radius, @border-color, @padding, @margin){
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: @color;
+    background-color: @bg-color;
+    border-radius: @border-radius;
+    border-color: @border-color;
+    padding: @padding;
+    margin: @margin; 
+    
+    @media @mobile{
+        
+    }
+}
